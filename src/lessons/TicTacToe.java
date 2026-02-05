@@ -75,6 +75,17 @@ public class TicTacToe {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton zeroButton = new JButton("");
+		zeroButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// zeroButton code start
+				
+				//buttonCode(0);
+				
+				// zeroButton code end
+				
+			}
+		});
 		zeroButton.setBounds(26, 45, 90, 90);
 		frame.getContentPane().add(zeroButton);
 		
@@ -123,6 +134,9 @@ public class TicTacToe {
 		buttons[7] = sevenButton;
 		buttons[8] = eightButton;
 		
+		/*	DESCRIPTION ...
+		 * 
+		 */
 		JButton xButton = new JButton("X");
 		xButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,6 +154,10 @@ public class TicTacToe {
 		xButton.setBounds(40, 385, 60, 43);
 		frame.getContentPane().add(xButton);
 		
+		
+		/*	DESCRIPTION ...
+		 * 
+		 */
 		JButton oButton = new JButton("O");
 		oButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -204,8 +222,25 @@ public class TicTacToe {
 			
 			System.out.println(gameBoard[i]);
 		}
+	}
+	
+	
+	/*	DESCRIPTION - Button behavior
+	 *  PARAMETERS - int square
+	 *  RETURN TYPE - void
+	 */	
+	public void buttonCode(int square)  {
+		
+		// check if game is over, if true, do nothing
+		if(gameOver == true )  {
+			
+			return;
+		}
 		
 		
 	}
+	
+	
+	
 	
 }
