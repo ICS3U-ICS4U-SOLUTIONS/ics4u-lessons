@@ -1,20 +1,35 @@
 package lessons;
 
+// need these two imports for images
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TicTacToe {
 
-	// variables must be ouside all methods in order to be 
-	// visible throughout the Class
+	// variables
 	private JFrame frame;
+	static JButton[] buttons = new JButton[9];  // to hold game board buttons
 	
-	// to hold game board buttons
-	JButton[] buttons = new JButton[9];
+	// gameBoard will be used to track x's and o's (0 = no pick, 1 = X, 2 = O)
+	int[] gameBoard = new int[9];
+	
+	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
+	ImageIcon o = new ImageIcon(getClass().getResource("/resources/o.png"));
+	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));	
+	
+	boolean xTurn = false;
+	boolean oTurn = false;
+	static boolean gameOver = false;
 	
 	// we moved the Info label outside from the initialize method
 	// so it can be visible in all other methods that we create
@@ -109,16 +124,51 @@ public class TicTacToe {
 		buttons[8] = eightButton;
 		
 		JButton xButton = new JButton("X");
+		xButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// x button code start
+				
+				xTurn = true;
+				oTurn = false;
+				initializeGame();
+				
+				// x button code end
+			}
+		});
 		xButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		xButton.setBounds(40, 385, 60, 43);
 		frame.getContentPane().add(xButton);
 		
 		JButton oButton = new JButton("O");
+		oButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// o button code start
+				
+				xTurn = false;
+				oTurn = true;
+				initializeGame();
+				
+				// o button code end
+			}
+		});
 		oButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		oButton.setBounds(147, 385, 60, 43);
 		frame.getContentPane().add(oButton);
 		
 		JButton exitButton = new JButton("Exit");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// exit button code start
+				
+				System.exit(0);
+				
+				// exit button code end
+				
+			}
+		});
 		exitButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		exitButton.setBounds(236, 395, 89, 23);
 		frame.getContentPane().add(exitButton);
@@ -127,4 +177,35 @@ public class TicTacToe {
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	}
+	
+	/*
+	 * 	DESCRIPTION - initializes game
+	 *  PARAMETERS - none
+	 *  RETURN TYPE - void
+	 */
+	public void initializeGame()  {
+		
+		// check if game is over
+		gameOver = false;
+		
+		for(int i=0; i<buttons.length; i++ )  {
+			
+			buttons[i].setIcon(blank);
+		}
+		
+		// reset gameBoard
+		for(int i=0; i<gameBoard.length; i++)  {
+			
+			gameBoard[i] = 0;
+		}
+		
+		// test print
+		for(int i=0; i<gameBoard.length; i++)  {
+			
+			System.out.println(gameBoard[i]);
+		}
+		
+		
+	}
+	
 }
