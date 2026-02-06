@@ -21,7 +21,7 @@ public class TicTacToe {
 	static JButton[] buttons = new JButton[9];  // to hold game board buttons
 	
 	// gameBoard will be used to track x's and o's (0 = no pick, 1 = X, 2 = O)
-	int[] gameBoard = new int[9];
+	static int[] gameBoard = new int[9];
 	
 	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
 	ImageIcon o = new ImageIcon(getClass().getResource("/resources/o.png"));
@@ -33,7 +33,7 @@ public class TicTacToe {
 	
 	// we moved the Info label outside from the initialize method
 	// so it can be visible in all other methods that we create
-	JLabel lblNewLabel_1 = new JLabel("First player picks X or O to start/reset.");
+	public static JLabel gameLabel = new JLabel("First player picks X or O to start/reset.");
 	
 
 	/**
@@ -79,45 +79,106 @@ public class TicTacToe {
 			public void actionPerformed(ActionEvent e) {
 				
 				// zeroButton code start
-				
-				//buttonCode(0);
-				
+				buttonCode(0);
 				// zeroButton code end
-				
 			}
 		});
 		zeroButton.setBounds(26, 45, 90, 90);
 		frame.getContentPane().add(zeroButton);
 		
 		JButton oneButton = new JButton("");
+		oneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// oneButton code start
+				buttonCode(1);
+				// oneButton code end
+			}
+		});
 		oneButton.setBounds(132, 45, 90, 90);
 		frame.getContentPane().add(oneButton);
 		
 		JButton twoButton = new JButton("");
+		twoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// twoButton code start
+				buttonCode(2);
+				// twoButton code end
+			}
+		});
 		twoButton.setBounds(235, 45, 90, 90);
 		frame.getContentPane().add(twoButton);
 		
 		JButton threeButton = new JButton("");
+		threeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// threeButton code start
+				buttonCode(3);
+				// threeButton code end
+			}
+		});
 		threeButton.setBounds(26, 153, 90, 90);
 		frame.getContentPane().add(threeButton);
 		
 		JButton fourButton = new JButton("");
+		fourButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// fourButton code start
+				buttonCode(4);
+				// fourButton code end
+			}
+		});
 		fourButton.setBounds(132, 153, 90, 90);
 		frame.getContentPane().add(fourButton);
 		
 		JButton fiveButton = new JButton("");
+		fiveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// fiveButton code start
+				buttonCode(5);
+				// fiveButton code end
+			}
+		});
 		fiveButton.setBounds(235, 153, 90, 90);
 		frame.getContentPane().add(fiveButton);
 		
 		JButton sixButton = new JButton("");
+		sixButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// sixButton code start
+				buttonCode(6);
+				// sixButton code end
+			}
+		});
 		sixButton.setBounds(26, 264, 90, 90);
 		frame.getContentPane().add(sixButton);
 		
 		JButton sevenButton = new JButton("");
+		sevenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// sevenButton code start
+				buttonCode(7);
+				// sevenButton code end
+			}
+		});
 		sevenButton.setBounds(132, 264, 90, 90);
 		frame.getContentPane().add(sevenButton);
 		
 		JButton eightButton = new JButton("");
+		eightButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// eightButton code start
+				buttonCode(8);
+				// eightButton code end
+			}
+		});
 		eightButton.setBounds(235, 264, 90, 90);
 		frame.getContentPane().add(eightButton);
 		
@@ -191,8 +252,8 @@ public class TicTacToe {
 		exitButton.setBounds(236, 395, 89, 23);
 		frame.getContentPane().add(exitButton);
 		
-		lblNewLabel_1.setBounds(54, 457, 242, 35);
-		frame.getContentPane().add(lblNewLabel_1);
+		gameLabel.setBounds(54, 457, 242, 35);
+		frame.getContentPane().add(gameLabel);
 		
 	}
 	
@@ -216,12 +277,6 @@ public class TicTacToe {
 			
 			gameBoard[i] = 0;
 		}
-		
-		// test print
-		for(int i=0; i<gameBoard.length; i++)  {
-			
-			System.out.println(gameBoard[i]);
-		}
 	}
 	
 	
@@ -237,10 +292,72 @@ public class TicTacToe {
 			return;
 		}
 		
+		// check if square has already been used
+		if (gameBoard[square] != 0)  {
+			
+			return;
+		}
 		
+		
+		
+		// determine if it's x's turn
+		if (xTurn == true)  {
+			
+			// put an x image on the square
+			buttons[square].setIcon(x);
+			
+			// record x on gameBoard
+			gameBoard[square] = 1;
+			
+			// switch to o's turn
+			oTurn = true;
+			xTurn = false;			
+		}
+		
+		// determine if it's o's turn
+		else if (oTurn == true)  {
+			
+			// put an o image on the square
+			buttons[square].setIcon(o);
+			
+			// record o on gameBoard
+			gameBoard[square] = 2;
+			
+			// switch to x's turn
+			oTurn = false;
+			xTurn = true;	
+		}
+		
+		checkForWinner();
 	}
 	
-	
-	
+	/*
+	 * DESCRIPTION - Checks if there is a game winner or a tie.  If there's a winner or
+	 *               a tie, game will be over and result displayed on a label. 
+	 * PARAMETERS - none
+	 * RETURN TYPE - void
+	 */
+	public static void checkForWinner()  {
+		
+		// check if X won (only checking top row right now ...)
+		if (
+		
+		(gameBoard[0] == 1 && gameBoard[1] == 1 && gameBoard[2] == 1)  ||
+		(gameBoard[3] == 1 && gameBoard[4] == 1 && gameBoard[5] == 1) 
+		
+		)
+		
+		{
+			
+			// make game over
+			gameOver = true;
+			
+			// display result on label
+			gameLabel.setText("X is the winner!");
+			
+		}
+		
+		
+	}
 	
 }
