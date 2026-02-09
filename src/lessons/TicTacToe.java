@@ -1,10 +1,5 @@
 package lessons;
 
-// need these two imports for images
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,28 +9,34 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+// THESE ARE THE ONLY TWO IMPORTS NEEDED
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+
 public class TicTacToe {
 
 	// variables
 	private JFrame frame;
-	static JButton[] buttons = new JButton[9];  // to hold game board buttons
 	
-	// gameBoard will be used to track x's and o's (0 = no pick, 1 = X, 2 = O)
-	static int[] gameBoard = new int[9];
-	
+	// 3 images used for game
 	ImageIcon x = new ImageIcon(getClass().getResource("/resources/x.png"));
 	ImageIcon o = new ImageIcon(getClass().getResource("/resources/o.png"));
-	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));	
+	ImageIcon blank = new ImageIcon(getClass().getResource("/resources/blank.png"));
+
+	// 2 arrays
+	JButton[] buttons = new JButton[9];  // to hold all the buttons
+	int[] gameBoard = new int[9];  // gameBoard is used to track x's and o's (0 = no pick, 1=x, 2=o)
 	
+	// 3 booleans
 	boolean xTurn = false;
 	boolean oTurn = false;
-	static boolean gameOver = false;
+	boolean gameOver = false;
 	
-	// we moved the Info label outside from the initialize method
-	// so it can be visible in all other methods that we create
-	public static JLabel gameLabel = new JLabel("First player picks X or O to start/reset.");
+	// make the infoLabel visible through any method (without having to pass as argument)
+	// this was moved from the initialize method without any changes
+	public static JLabel infoLabel = new JLabel("First player picks X or O to start/reset.");
 	
-
 	/**
 	 * Launch the application.
 	 */
@@ -64,128 +65,130 @@ public class TicTacToe {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 16));
-		frame.setBounds(50, 50, 376, 562);
+		frame.setBounds(100, 100, 448, 558);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Tic Tac Toe");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setBounds(132, 11, 124, 23);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel titleLabel = new JLabel("Mr. Wong's Tic Tac Toe");
+		titleLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		titleLabel.setBounds(115, 34, 228, 35);
+		frame.getContentPane().add(titleLabel);
+		
+		infoLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+		infoLabel.setBounds(116, 473, 227, 23);
+		frame.getContentPane().add(infoLabel);
 		
 		JButton zeroButton = new JButton("");
 		zeroButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// zeroButton code start
+				// button code starts here
 				buttonCode(0);
-				// zeroButton code end
+				// button code ends here
 			}
 		});
-		zeroButton.setBounds(26, 45, 90, 90);
+		zeroButton.setBounds(47, 74, 90, 90);
 		frame.getContentPane().add(zeroButton);
 		
 		JButton oneButton = new JButton("");
 		oneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// oneButton code start
+				// button code starts here
 				buttonCode(1);
-				// oneButton code end
+				// button code ends here
 			}
 		});
-		oneButton.setBounds(132, 45, 90, 90);
+		oneButton.setBounds(168, 74, 90, 90);
 		frame.getContentPane().add(oneButton);
 		
 		JButton twoButton = new JButton("");
 		twoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// twoButton code start
+				// button code starts here
 				buttonCode(2);
-				// twoButton code end
+				// button code ends here
 			}
 		});
-		twoButton.setBounds(235, 45, 90, 90);
+		twoButton.setBounds(290, 74, 90, 90);
 		frame.getContentPane().add(twoButton);
 		
 		JButton threeButton = new JButton("");
 		threeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// threeButton code start
+				// button code starts here
 				buttonCode(3);
-				// threeButton code end
+				// button code ends here
 			}
 		});
-		threeButton.setBounds(26, 153, 90, 90);
+		threeButton.setBounds(47, 186, 90, 90);
 		frame.getContentPane().add(threeButton);
 		
 		JButton fourButton = new JButton("");
 		fourButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// fourButton code start
+				// button code starts here
 				buttonCode(4);
-				// fourButton code end
+				// button code ends here
 			}
 		});
-		fourButton.setBounds(132, 153, 90, 90);
+		fourButton.setBounds(168, 186, 90, 90);
 		frame.getContentPane().add(fourButton);
 		
 		JButton fiveButton = new JButton("");
 		fiveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// fiveButton code start
+				// button code starts here
 				buttonCode(5);
-				// fiveButton code end
+				// button code ends here
 			}
 		});
-		fiveButton.setBounds(235, 153, 90, 90);
+		fiveButton.setBounds(290, 186, 90, 90);
 		frame.getContentPane().add(fiveButton);
 		
 		JButton sixButton = new JButton("");
 		sixButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// sixButton code start
+				// button code starts here
 				buttonCode(6);
-				// sixButton code end
+				// button code ends here
 			}
 		});
-		sixButton.setBounds(26, 264, 90, 90);
+		sixButton.setBounds(47, 295, 90, 90);
 		frame.getContentPane().add(sixButton);
 		
 		JButton sevenButton = new JButton("");
 		sevenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// sevenButton code start
+				// button code starts here
 				buttonCode(7);
-				// sevenButton code end
+				// button code ends here
 			}
 		});
-		sevenButton.setBounds(132, 264, 90, 90);
+		sevenButton.setBounds(168, 295, 90, 90);
 		frame.getContentPane().add(sevenButton);
 		
 		JButton eightButton = new JButton("");
 		eightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// eightButton code start
+				// button code starts here
 				buttonCode(8);
-				// eightButton code end
+				// button code ends here
 			}
 		});
-		eightButton.setBounds(235, 264, 90, 90);
+		eightButton.setBounds(290, 295, 90, 90);
 		frame.getContentPane().add(eightButton);
 		
-		// put all buttons into array
-		// this must be done here, after buttons
-		// have been created
-		buttons[0] = zeroButton;
+		// put all buttons into an array, this must be done
+		// here, after the buttons have been generated
+		buttons[0] = zeroButton; 
 		buttons[1] = oneButton;
 		buttons[2] = twoButton;
 		buttons[3] = threeButton;
@@ -195,169 +198,160 @@ public class TicTacToe {
 		buttons[7] = sevenButton;
 		buttons[8] = eightButton;
 		
-		/*	DESCRIPTION ...
-		 * 
-		 */
 		JButton xButton = new JButton("X");
 		xButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// x button code start
-				
+				// button code starts here
 				xTurn = true;
 				oTurn = false;
 				initializeGame();
-				
-				// x button code end
+				// button code ends here
 			}
 		});
-		xButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		xButton.setBounds(40, 385, 60, 43);
+		xButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		xButton.setBounds(94, 413, 43, 35);
 		frame.getContentPane().add(xButton);
 		
-		
-		/*	DESCRIPTION ...
-		 * 
-		 */
 		JButton oButton = new JButton("O");
 		oButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// o button code start
-				
+				// button code starts here
 				xTurn = false;
 				oTurn = true;
-				initializeGame();
+				initializeGame();	
+				// button code ends here
 				
-				// o button code end
 			}
 		});
-		oButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		oButton.setBounds(147, 385, 60, 43);
+		oButton.setFont(new Font("Tahoma", Font.BOLD, 11));
+		oButton.setBounds(179, 413, 43, 35);
 		frame.getContentPane().add(oButton);
 		
 		JButton exitButton = new JButton("Exit");
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				// exit button code start
-				
+				// exit button code starts here
 				System.exit(0);
-				
-				// exit button code end
-				
+				// exit button code ends here
 			}
 		});
-		exitButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		exitButton.setBounds(236, 395, 89, 23);
+		exitButton.setBounds(271, 419, 89, 23);
 		frame.getContentPane().add(exitButton);
-		
-		gameLabel.setBounds(54, 457, 242, 35);
-		frame.getContentPane().add(gameLabel);
-		
 	}
 	
-	/*
-	 * 	DESCRIPTION - initializes game
-	 *  PARAMETERS - none
-	 *  RETURN TYPE - void
-	 */
+	// this method initializes the game and is used by both X and O buttons
 	public void initializeGame()  {
 		
-		// check if game is over
 		gameOver = false;
 		
-		for(int i=0; i<buttons.length; i++ )  {
+		// display blank images on all buttons
+		for (int i=0; i<buttons.length; i++)  {
 			
 			buttons[i].setIcon(blank);
 		}
 		
-		// reset gameBoard
+		// set gameBoard to all zero's
 		for(int i=0; i<gameBoard.length; i++)  {
-			
+		
 			gameBoard[i] = 0;
 		}
 	}
 	
-	
-	/*	DESCRIPTION - Button behavior
-	 *  PARAMETERS - int square
-	 *  RETURN TYPE - void
-	 */	
+	// this method is used by every button
 	public void buttonCode(int square)  {
 		
-		// check if game is over, if true, do nothing
-		if(gameOver == true )  {
+		// check if game is over
+		if (gameOver == true)  {
 			
-			return;
+			return;   // kicks out of method, nothing will happen
 		}
 		
-		// check if square has already been used
+		// check if button has been picked already
 		if (gameBoard[square] != 0)  {
 			
 			return;
 		}
 		
-		
-		
-		// determine if it's x's turn
+		// x's turn
 		if (xTurn == true)  {
 			
-			// put an x image on the square
+			// display x on square
 			buttons[square].setIcon(x);
 			
-			// record x on gameBoard
+			// keep track of game on gameBoard
 			gameBoard[square] = 1;
 			
-			// switch to o's turn
+			// set xTurn to false
+			xTurn = false;
+			
+			// set oTurn to true
 			oTurn = true;
-			xTurn = false;			
 		}
 		
-		// determine if it's o's turn
-		else if (oTurn == true)  {
+		// o's turn
+		else if (oTurn ==  true)  {
 			
-			// put an o image on the square
+			// display o on square
 			buttons[square].setIcon(o);
 			
-			// record o on gameBoard
+			// keep track of game on gameBoard
 			gameBoard[square] = 2;
 			
-			// switch to x's turn
+			// set xTurn to true
+			xTurn = true;
+			
+			// set oTurn to false
 			oTurn = false;
-			xTurn = true;	
 		}
 		
 		checkForWinner();
 	}
 	
-	/*
-	 * DESCRIPTION - Checks if there is a game winner or a tie.  If there's a winner or
-	 *               a tie, game will be over and result displayed on a label. 
-	 * PARAMETERS - none
-	 * RETURN TYPE - void
-	 */
-	public static void checkForWinner()  {
+	// This method is used every time buttonCode() method is used.
+	// Although we could include this code in the buttonCode() method,
+	// we use a separate method to simplify and separate the tasks.
+	public void checkForWinner() {
 		
-		// check if X won (only checking top row right now ...)
-		if (
-		
-		(gameBoard[0] == 1 && gameBoard[1] == 1 && gameBoard[2] == 1)  ||
-		(gameBoard[3] == 1 && gameBoard[4] == 1 && gameBoard[5] == 1) 
-		
-		)
-		
-		{
+		// check if X won
+		if ( gameBoard[0]==1 && gameBoard[1]==1 && gameBoard[2]==1 	  // first row
+			|| gameBoard[3]==1 && gameBoard[4]==1 && gameBoard[5]==1	  // second row
+			|| gameBoard[6]==1 && gameBoard[6]==1 && gameBoard[8]==1	  // third row
+			|| gameBoard[0]==1 && gameBoard[3]==1 && gameBoard[6]==1 	  // first column
+			|| gameBoard[1]==1 && gameBoard[4]==1 && gameBoard[7]==1 	  // second column
+			|| gameBoard[2]==1 && gameBoard[5]==1 && gameBoard[8]==1	  // third column   
+			|| gameBoard[0]==1 && gameBoard[4]==1 && gameBoard[8]==1 	  // diagonal
+			|| gameBoard[2]==1 && gameBoard[4]==1 && gameBoard[6]==1 )  { // diagonal
 			
-			// make game over
 			gameOver = true;
-			
-			// display result on label
-			gameLabel.setText("X is the winner!");
-			
+			infoLabel.setText("X wins!");
 		}
 		
-		
+		// check if O won
+		else if ( gameBoard[0]==2 && gameBoard[1]==2 && gameBoard[2]==2 	// first row
+				|| gameBoard[3]==2 && gameBoard[4]==2 && gameBoard[5]==2	// second row
+				|| gameBoard[6]==2 && gameBoard[6]==2 && gameBoard[8]==2	// third row
+				|| gameBoard[0]==2 && gameBoard[3]==2 && gameBoard[6]==2	// first column
+		     	|| gameBoard[1]==2 && gameBoard[4]==2 && gameBoard[7]==2 	// second column
+			    || gameBoard[2]==2 && gameBoard[5]==2 && gameBoard[8]==2	// third column   
+			    || gameBoard[0]==2 && gameBoard[4]==2 && gameBoard[8]==2 	// diagonal
+			    || gameBoard[2]==2 && gameBoard[4]==2 && gameBoard[6]==2 )  {	// diagonal
+
+			gameOver = true;
+			infoLabel.setText("O wins!");
+		}
+			
+		// if no winner and all squares are used, then it must be a tie
+		else if (  gameBoard[0]!=0 && gameBoard[1]!=0 && gameBoard[2]!=0 && gameBoard[3]!=0 
+				&& gameBoard[4]!=0 && gameBoard[5]!=0 && gameBoard[6]!=0 && gameBoard[7]!=0
+				&& gameBoard[8]!=0)  {
+
+			gameOver = true;
+			infoLabel.setText("Tie game!");
+		}
+			
 	}
-	
+
 }
