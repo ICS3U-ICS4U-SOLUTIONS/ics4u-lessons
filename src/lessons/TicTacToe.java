@@ -344,13 +344,8 @@ public class TicTacToe {
 		}
 			
 		// if no winner and all squares are used, then it must be a tie
-		else if (  gameBoard[0]!=0 && gameBoard[1]!=0 && gameBoard[2]!=0 && gameBoard[3]!=0 
-				&& gameBoard[4]!=0 && gameBoard[5]!=0 && gameBoard[6]!=0 && gameBoard[7]!=0
-				&& gameBoard[8]!=0)  {
-
-			gameOver = true;
-			infoLabel.setText("Tie game!");
-		}
+		
+		// TO BE COMPLETED
 			
 	}
 
