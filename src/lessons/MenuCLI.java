@@ -41,6 +41,7 @@ public class MenuCLI {
 				try {
 					
 					depositAmount = sc.nextDouble();
+					balance = depositMethod(depositAmount, balance);
 				}
 				
 				catch(Exception e)  {
@@ -48,9 +49,7 @@ public class MenuCLI {
 					System.out.println("Invalid entry.  Returning to main menu.");
 				}
 						
-				balance = depositMethod(depositAmount, balance);
 			}
-			
 		}
 	}
 	
