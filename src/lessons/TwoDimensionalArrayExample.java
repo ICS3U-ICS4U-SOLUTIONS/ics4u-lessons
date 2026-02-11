@@ -60,10 +60,5 @@ public class TwoDimensionalArrayExample {
 		
 		return totalChocolateBars;
 	}
-	
-	
-	
-	// 1. How many chocolate bars do we have in the entire inventory?
-	// 2. What is the total retail value of all the chocolate bars?
 
 }
