@@ -15,14 +15,8 @@ public class MenuCLI {
 		
 		while(userChoice != 4)  {
 		
-			// print menu
-			System.out.println("Welcome to the bank.");
-			System.out.println("Menu:");
-			System.out.println("1. Deposit");
-			System.out.println("2. Witdraw");
-			System.out.println("3. Balance");
-			System.out.println("4. Exit");
-			System.out.println("Choice: ");
+			
+			// printMenu();
 			
 			try {
 				
@@ -65,6 +59,20 @@ public class MenuCLI {
 	}
 	
 	
-	
-	
+	/*
+	 * DESCRIPTION - Displays menu.
+	 * PARAMETERS - None
+	 * RETURN TYPE - void
+	 */
+	public static void printMenu()  {
+		
+		System.out.println("Welcome to the bank.");
+		System.out.println("Menu:");
+		System.out.println("1. Deposit");
+		System.out.println("2. Witdraw");
+		System.out.println("3. Balance");
+		System.out.println("4. Exit");
+		System.out.println("Choice: ");
+	}
+
 }
