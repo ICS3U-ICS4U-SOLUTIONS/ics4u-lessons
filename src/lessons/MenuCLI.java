@@ -15,12 +15,21 @@ public class MenuCLI {
 		
 		while(userChoice != 4)  {
 		
-			
-			// printMenu();
+			printMenu();
 			
 			try {
 				
-				userChoice = sc.nextInt();
+				/* 
+				 * NOTE: 
+				 * 
+				 * userChoice = sc.nextInt();
+				 * 
+				 * Will result with an infinite loop due to JRE 1.8 bug.
+				 * Do the following instead:
+				 */
+				
+				String temp = sc.nextLine();
+				userChoice = Integer.parseInt(temp);
 			}
 			
 			catch(Exception e)  {
