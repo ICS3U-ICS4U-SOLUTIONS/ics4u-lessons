@@ -9,7 +9,6 @@ public class TestEmployeeClass {
 		Employee myEmployee1 = new Employee();
 		Employee myEmployee2 = new Employee();
 		Employee myEmployee3 = new Employee("Matthew", "Douglas", 500);
-		Employee myEmployee4 = new Employee(453);
 				
 		// set employee1 data members
 		myEmployee1.setFirstName("John");
