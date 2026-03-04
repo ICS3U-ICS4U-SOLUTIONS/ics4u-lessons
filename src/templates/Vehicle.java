@@ -1,11 +1,11 @@
 package templates;
 
-public class Vehicle {
+abstract class Vehicle {
 	
 	// data members
-	private double price;
-	private String make;
-	private int year;
+	protected double price;
+	protected String make;
+	protected int year;
 	
 	// default constructor
 	public Vehicle()  {

@@ -1,72 +1,33 @@
 package templates;
 
-public class Car {
+public class Car extends Vehicle {
 
 	// data members
-	private double price;
-	private String make;
-	private int year;
 	private int mileage;
 	
 	// default constructor
 	public Car()  {
 		
-		this.price = 0.0;
-		this.make = "";
-		this.year = 0;
+		super();
 		this.mileage = 0;
 	}
-
 	
 	// DESCRIPTION - parameterized constructor
-	// PARAMETERS - double p, String m, int y, int m
+	// PARAMETERS - double p, String ma, int y, int mi
 	// RETURN - void
 	public Car(double p, String ma, int y, int mi)  {
 		
-		this.price = p;
-		this.make= ma;
-		this.year = y;
+		super(p, ma, y);
 		this.mileage = mi;
 	}
 	
-	// get methods
-	
-	public double getPrice()  {
-		
-		return this.price;
-	}
-	
-	public String getMake()  {
-		
-		return this.make;
-	}
-	
-	public int getYear()  {
-		
-		return this.year;
-	}
-	
+	// get method
 	public int getMileage()  {
 		
 		return this.mileage;
 	}
 	
-	// set methods
-	public void setPrice(double p)  {
-		
-		this.price = p;
-	}
-	
-	public void setMake(String ma)  {
-		
-		this.make = ma;
-	}
-	
-	public void setYear(int y)  {
-		
-		this.year = y;
-	}
-	
+	// set method
 	public void setMileage(int mi)  {
 		
 		this.mileage = mi;
@@ -75,8 +36,7 @@ public class Car {
 	@Override
 	public String toString()  {
 		
-		return super.toString() + "." + this.price + "." + this.make 
-				+ "." + this.year + "." + this.mileage;
+		return super.toString() + "." + this.mileage;
 	}
 	
 }
