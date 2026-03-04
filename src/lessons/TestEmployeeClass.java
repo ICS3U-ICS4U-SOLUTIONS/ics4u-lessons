@@ -1,5 +1,5 @@
 package lessons;
-import objects.Employee;
+import templates.Employee;
 
 public class TestEmployeeClass {
 
@@ -35,6 +35,10 @@ public class TestEmployeeClass {
 		System.out.println("MYEMLOYEE1: ");
 		System.out.println(myEmployee1);
 		System.out.println(myEmployee1.toString());
+		
+//		myEmployee1.firstName = "Henry";
+//		System.out.println(myEmployee1.firstName);
+		
 	}
 
 }

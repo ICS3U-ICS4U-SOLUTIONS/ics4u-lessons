@@ -1,11 +1,11 @@
-package objects;
+package templates;
 
 public class Employee {
 	
 	// data members
-	String firstName;
-	String lastName;
-	int employeeNumber;
+	private String firstName;
+	private String lastName;
+	private int employeeNumber;
 	
 	// default constructor (no parameters, initialize with default values)
 	public Employee()  {
