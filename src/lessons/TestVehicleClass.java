@@ -1,6 +1,6 @@
 package lessons;
 import templates.Car;
-import templates.Vehicle;
+
 
 public class TestVehicleClass {
 
