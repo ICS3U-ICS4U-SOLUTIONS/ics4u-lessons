@@ -72,7 +72,6 @@ public class Factorial {
 		else if (n == 0)
 			return 1;
 		
-		else
-			return n * factorialRecursive(n-1);
+		return n * factorialRecursive(n-1);
 	}
 }

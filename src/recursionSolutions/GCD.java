@@ -22,8 +22,7 @@ public class GCD {
 			return x;
 		
 		// recursive call
-		else
-			return GCD(y, x%y);
+		return GCD(y, x%y);
 	}
 	
 
