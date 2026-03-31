@@ -15,10 +15,10 @@ public class GCD {
 			return -1;
 		
 		// base cases
-		else if (x == y)
+		if (x == y)
 			return x;
 		
-		else if (y == 0)
+		if (y == 0)
 			return x;
 		
 		// recursive call

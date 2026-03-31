@@ -27,10 +27,10 @@ public class Fibonacci {
 		if (x < 1)
 			return -1;
 		
-		else if (x == 1)
+		if (x == 1)
 			return first;
 		
-		else if (x == 2)
+		if (x == 2)
 			return second;
 		
 		while (x > 2)  {
@@ -56,10 +56,10 @@ public class Fibonacci {
 		if (n < 1)
 			return -1;
 		
-		else if (n == 1)
+		if (n == 1)
 			return first;
 
-		else if (n == 2)
+		if (n == 2)
 			return second;
 
 		for (int i=2; i<n; i++)  {
@@ -84,10 +84,10 @@ public class Fibonacci {
 			return -1;
 		
 		// base cases
-		else if (x == 1)       // x = 0
+		if (x == 1)       // x = 0
 			return first;
 		
-		else if (x == 2)
+		if (x == 2)
 			return second;     // x = 1
 		
 		// SINCE: fib(1) = 0 and fib(2) = 1

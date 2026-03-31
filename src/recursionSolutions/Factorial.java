@@ -25,7 +25,7 @@ public class Factorial {
 			return -1;
 		
 		// exception case
-		else if (n == 0)
+		if (n == 0)
 			return answer;
 	
 		// calculate
@@ -48,7 +48,7 @@ public class Factorial {
 			return -1;
 		
 		// exception case
-		else if (n == 0)
+		if (n == 0)
 			return answer;
 	
 		// calculate
@@ -69,7 +69,7 @@ public class Factorial {
 			return -1;
 		
 		// base case (stop case / stop condition)
-		else if (n == 0)
+		if (n == 0)
 			return 1;
 		
 		return n * factorialRecursive(n-1);
