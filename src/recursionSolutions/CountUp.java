@@ -16,7 +16,7 @@ public class CountUp {
 		if (x > y)  {
 			
 			System.out.println("Invalid.");
-			System.exit(0);
+			return;
 		}
 		
 		// base/stop case
