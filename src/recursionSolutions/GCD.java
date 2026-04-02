@@ -15,13 +15,10 @@ public class GCD {
 			return -1;
 		
 		// base cases
-		if (x == y)
+		if (x == y || y == 0)
 			return x;
 		
-		if (y == 0)
-			return x;
-		
-		// recursive call
+		// processing
 		return GCD(y, x%y);
 	}
 	
