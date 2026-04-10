@@ -1,6 +1,6 @@
 package templates;
 
-abstract class Vehicle {
+public abstract class Vehicle {
 	
 	// data members
 	protected double price;
