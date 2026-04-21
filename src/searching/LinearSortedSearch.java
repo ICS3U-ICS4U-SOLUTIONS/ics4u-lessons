@@ -1,4 +1,4 @@
-package lessons;
+package searching;
 
 public class LinearSortedSearch {
 

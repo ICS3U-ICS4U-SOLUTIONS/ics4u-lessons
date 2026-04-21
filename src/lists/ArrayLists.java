@@ -1,4 +1,4 @@
-package lessons;
+package lists;
 import java.util.ArrayList;		// must import library
 
 public class ArrayLists {

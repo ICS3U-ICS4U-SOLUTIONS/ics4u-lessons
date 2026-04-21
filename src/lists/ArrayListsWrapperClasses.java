@@ -1,4 +1,4 @@
-package lessons;
+package lists;
 import java.util.ArrayList;
 
 public class ArrayListsWrapperClasses {
