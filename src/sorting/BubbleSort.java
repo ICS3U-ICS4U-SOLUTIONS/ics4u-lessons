@@ -9,20 +9,13 @@ public class BubbleSort {
 
 		// unsorted array
 		int[] myArray = {5, 2, 3, 1, 4, 9, 6, 7, 8, 0};
-
 		printArray(myArray);
-
 		swap(myArray, 2, 5); // test swap method
-
 		printArray(myArray);
-
 		bubbleSort(myArray, false);
-		
 		printArray(myArray);
-		
 		System.out.println("SWAPS: " + numSwaps);
 		System.out.println("COMPARISONS: " + numComparisons);
-		
 	}
 	
 	
