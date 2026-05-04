@@ -21,6 +21,13 @@ public class InsertionSort {
 	 */
 	public static void insertionSort(int[] a, int n)  {
 		
+		/*	Insertion sort is similar to sorting a hand of cards.
+		 * 	Put first 2 items in correct order.
+		 * 	Insert 3rd item in correct place relative to fist two.
+		 * 	Insert fourth item in correct place relative to first three.
+		 * 	and so on ...
+		 */
+
 		
 	}
 	
