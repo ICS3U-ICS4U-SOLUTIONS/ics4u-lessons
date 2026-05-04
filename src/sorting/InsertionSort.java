@@ -26,6 +26,8 @@ public class InsertionSort {
 		 * 	Insert 3rd item in correct place relative to fist two.
 		 * 	Insert fourth item in correct place relative to first three.
 		 * 	and so on ...
+		 * 
+		 * 	CHECK OUT:  https://www.youtube.com/watch?v=JU767SDMDvA
 		 */
 
 		
