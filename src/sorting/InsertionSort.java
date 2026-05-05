@@ -7,7 +7,7 @@ public class InsertionSort {
 	
 	public static void main(String[] args) {
 
-		int[] myArray  = {4, 3, 1, 0, 2};
+		int[] myArray  = {1, 2, 3, 4, 5, 6, 8, 9, 7};
 		insertionSort(myArray, 0);
 		printArray(myArray);
 		System.out.println("COMPARISONS: " + comparisons);
@@ -30,6 +30,22 @@ public class InsertionSort {
 		 * 	CHECK OUT:  https://www.youtube.com/watch?v=JU767SDMDvA
 		 */
 
+		// working from left-to-right
+		for(int i=0; i<a.length; i++)  {
+			
+			// compare with all items to the left (use nested loop)
+			for (int j=i; j>0; j--) {
+				
+				comparisons++;
+				if (a[j] < a[j-1])
+					swap(a, j, j-1);
+				
+				// stop comparing elements if no swap was performed
+				else
+					break;
+			}
+			
+		}
 		
 	}
 	
