@@ -2,6 +2,7 @@ package sorting;
 
 public class InsertionSort {
 
+	// global counters
 	public static int swaps = 0;
 	public static int comparisons = 0;
 	
@@ -44,10 +45,9 @@ public class InsertionSort {
 				else
 					break;
 			}
-			
 		}
-		
 	}
+	
 	
 	/*	DESCRIPTION - Prints array.
 	 * 	PARAMETERS - int[] a
@@ -63,6 +63,7 @@ public class InsertionSort {
 		System.out.println();
 	}
 
+	
 	/*	DESCPRITION - Swaps int[x] with int[y].
 	 * 	PARAMETERS - int[] a, int x, int y
 	 * 	RETURN - none
@@ -72,10 +73,8 @@ public class InsertionSort {
 		swaps++;
 		
 		int temp = a[x];
-		
 		a[x] = a[y];
 		a[y] = temp;
 	}
 	
-
 }
