@@ -35,23 +35,16 @@ public class QuickSort {
     	a[y] = temp;
     }
 	
-	
-	/*  DESCRIPTION - Sorts int[] in ascending order.
-	 *  PARAMETERS - int[] array, int left, int right
-	 *  RETURN - void
-	 */
-//	public static void quickSort(int[] array, int left, int right)
-	
-	
-
-    
 
 	/*  DESCRIPTION - Returns index of first value bigger than pivot, starting from the left.
  	 * 				  Returns -1 if no element is bigger than pivot.
  	 *  PARAMETERS - int[] array, int left, int right
  	 *  RETURN - int
  	*/
-//public static int getItemFromLeftIndex(int[] array, int left, int right)
+	public static int getItemFromLeftIndex(int[] array, int left, int right)  {
+	
+		return 0;
+	}
 
 	
 	/*  DESCRIPTION - Returns index of first value smaller than pivot, starting from the right.
@@ -59,32 +52,30 @@ public class QuickSort {
 	 *  PARAMETERS - int[] array, int left, int right
 	 *  RETURN - int
 	 */
-//	public static int getItemFromRightIndex(int[] array, int left, int right)
-
-	
-	
-
-    	/*  DESCRIPTION - Moves pivot (right-most element) to correct location in sorted list.
-    	 *  			  Moves values < pivot to leftof pivot.  Moves all values > pivot to right of pivot.
-    	 *  			  Returns index of pivot. a.length > 1.
-     	 *  PARAMETERS - int[] array, int left, int right
-     	 *  RETURN - int
-     	*/
- //  	public static int partition(int[] array, int left, int right)
+	public static int getItemFromRightIndex(int[] array, int left, int right)  {
+		
+		return 0;
+	}
 
 
-	
-	
+    /*  DESCRIPTION - Moves pivot (right-most element) to correct location in sorted list.
+     *  			  Moves values < pivot to leftof pivot.  Moves all values > pivot to right of pivot.
+     *  			  Returns index of pivot. a.length > 1.
+     *  PARAMETERS - int[] array, int left, int right
+     *  RETURN - int
+     */
+   	public static int partition(int[] array, int left, int right)  {
+   		
+   		return 0;
+   	}
+   	
+   	
+	/*  DESCRIPTION - Sorts int[] in ascending order.
+	 *  PARAMETERS - int[] array, int left, int right
+	 *  RETURN - void
+	 */
+	public static void quickSort(int[] array, int left, int right)  {
+		
+	}
 
-
-	
-	
-	
-	
-
-    
-    
- 
-
-	
 }
