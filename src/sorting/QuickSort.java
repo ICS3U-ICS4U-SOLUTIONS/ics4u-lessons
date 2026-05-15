@@ -36,6 +36,16 @@ public class QuickSort {
     }
 	
 
+	/* DESCRIPTION - Uses "Median of Three" method for selecting pivot.  Orders left, middle and right, then swaps middle with right.
+ 	 * PARAMETERS - int[] array, int left, int right
+  	 * RETURN - void
+	 */
+	public static void pickPivot(int[] array, int left, int right)  {
+		
+		
+	}
+
+    
 	/*  DESCRIPTION - Returns index of first value bigger than pivot, starting from the left.
  	 * 				  Returns -1 if no element is bigger than pivot.
  	 *  PARAMETERS - int[] array, int left, int right
