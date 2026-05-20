@@ -5,8 +5,16 @@ public class QuickSort {
 	public static void main(String[] args) {
 
 		int[] myArray = {2, 3, 6, 0, 1, 5, 4};	
+		System.out.print("UNSORTED ARRAY: ");
 		printArray(myArray);
-
+		
+		pickPivot(myArray, 0, myArray.length-1);
+		System.out.print("PIVOT PICKED:   ");
+		printArray(myArray);
+		
+		System.out.print("IFL: " + getItemFromLeftIndex(myArray, 0, myArray.length-1));
+		System.out.print("\nIFR: " + getItemFromRightIndex(myArray, 0, myArray.length-1));
+		
 	}
 
 	
@@ -41,6 +49,22 @@ public class QuickSort {
 	 */
 	public static void pickPivot(int[] array, int left, int right)  {
 		
+		int middle = (left+right) / 2;
+			
+		// compare left and middle, swap if necessary
+		if (array[left] > array[middle])
+			swap(array, left, middle);
+		
+		// compare middle and right, swap if necessary
+		if (array[middle] > array[right])
+			swap(array, middle, right);
+		
+		// compare left and middle, swap if necessary
+		if (array[left] > array[middle])
+			swap(array, left, middle);
+		
+		// swap middle with right
+		swap(array, middle, right);
 		
 	}
 
@@ -52,7 +76,18 @@ public class QuickSort {
  	*/
 	public static int getItemFromLeftIndex(int[] array, int left, int right)  {
 	
-		return 0;
+		int itemFromLeftIndex = -1;
+		
+		for(int i=left; i<right; i++)  {
+		
+			if(array[i] > array[right])  {
+				
+				itemFromLeftIndex = i;
+				break;
+			}
+		}
+		
+		return itemFromLeftIndex;
 	}
 
 	
@@ -63,17 +98,55 @@ public class QuickSort {
 	 */
 	public static int getItemFromRightIndex(int[] array, int left, int right)  {
 		
-		return 0;
+		int itemFromRightIndex = -1;
+		
+		for(int i=right-1; i>=left ; i--)  {
+		
+			if(array[i] < array[right])  {
+				
+				itemFromRightIndex = i;
+				break;
+			}
+		}
+		
+		return itemFromRightIndex;
 	}
 
 
     /*  DESCRIPTION - Moves pivot (right-most element) to correct location in sorted list.
-     *  			  Moves values < pivot to leftof pivot.  Moves all values > pivot to right of pivot.
-     *  			  Returns index of pivot. a.length > 1.
+     *  			  Moves values < pivot to left of pivot.  Moves all values > pivot to right of pivot.
+     *  			  Returns index of pivot. a.length > 1.  Returns -1 if sub-list is size 1.
      *  PARAMETERS - int[] array, int left, int right
      *  RETURN - int
      */
    	public static int partition(int[] array, int left, int right)  {
+   		
+   		// STOP CASE (list size 1)
+   		if (left == right)
+   			return -1;
+   		
+   		// variables
+   		int itemFromLeftIndex = getItemFromLeftIndex(array, right, left);
+   		int itemFromRightIndex = getItemFromRightIndex(array, right, left);
+   		
+   		// CONDITION 1 - no IFL, pivot in correct location on right
+   		if (itemFromLeftIndex == -1)
+   			return right;
+   		
+   		// CONDITION 2 - no IFR, swap pivot with left most position, return index 
+   		else if (itemFromRightIndex == -1)  {
+   			
+   			swap(array, array[left], array[right]);
+   			return left;
+   		}
+   		
+   		
+   		
+   		// CONDITION 3 - IFL > IFR
+   		
+   		// CONDITION 4 - IFL < IFR
+   		
+   		
    		
    		return 0;
    	}
