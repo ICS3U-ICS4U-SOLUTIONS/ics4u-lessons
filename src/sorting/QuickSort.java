@@ -5,15 +5,11 @@ public class QuickSort {
 	public static void main(String[] args) {
 
 		int[] myArray = {2, 3, 6, 0, 1, 5, 4};	
-		System.out.print("UNSORTED ARRAY: ");
-		printArray(myArray);
 		
-		pickPivot(myArray, 0, myArray.length-1);
-		System.out.print("PIVOT PICKED:   ");
-		printArray(myArray);
+		quickSort(myArray, 0, myArray.length-1);
 		
-		System.out.print("IFL: " + getItemFromLeftIndex(myArray, 0, myArray.length-1));
-		System.out.print("\nIFR: " + getItemFromRightIndex(myArray, 0, myArray.length-1));
+		
+		printArray(myArray);
 		
 	}
 
@@ -126,8 +122,8 @@ public class QuickSort {
    			return -1;
    		
    		// variables
-   		int itemFromLeftIndex = getItemFromLeftIndex(array, right, left);
-   		int itemFromRightIndex = getItemFromRightIndex(array, right, left);
+   		int itemFromLeftIndex = getItemFromLeftIndex(array, left, right);
+   		int itemFromRightIndex = getItemFromRightIndex(array, left, right);
    		
    		// CONDITION 1 - no IFL, pivot in correct location on right
    		if (itemFromLeftIndex == -1)
@@ -136,19 +132,23 @@ public class QuickSort {
    		// CONDITION 2 - no IFR, swap pivot with left most position, return index 
    		else if (itemFromRightIndex == -1)  {
    			
-   			swap(array, array[left], array[right]);
+   			swap(array, left, right);
    			return left;
    		}
    		
+   		// CONDITION 3 - IFL index > IFR index (they cross), swap IFL with PIVOT, stop
+   		else if (itemFromLeftIndex > itemFromRightIndex)  {
+   			
+   			swap(array, itemFromLeftIndex, right);
+   			return itemFromLeftIndex;
+   		}
    		
+   		// CONDITION 4 - IFL index < IFR index
+   		else  {
    		
-   		// CONDITION 3 - IFL > IFR
-   		
-   		// CONDITION 4 - IFL < IFR
-   		
-   		
-   		
-   		return 0;
+   			swap(array, itemFromLeftIndex, itemFromRightIndex);
+   			return partition(array, left, right);
+   		}
    	}
    	
    	
@@ -158,6 +158,25 @@ public class QuickSort {
 	 */
 	public static void quickSort(int[] array, int left, int right)  {
 		
+		// base / stop case (sublist is size 1)
+		if(left == right)
+			return;
+		
+		// base / stop case (no sublist to partition)
+		if(left > right)
+			return;
+		
+		// pick pivot
+		pickPivot(array, left, right);
+		
+		// partition
+		int pivot = partition(array, left, right);
+		
+		// quickSort left sublist
+		quickSort(array, left, pivot-1);
+		
+		// quicSort right sublist
+		quickSort(array, pivot+1, right);
 	}
 
 }
