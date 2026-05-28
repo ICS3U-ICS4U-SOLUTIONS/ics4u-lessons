@@ -10,14 +10,8 @@ public class MergeSort {
 
 		myArray = mergeSort(myArray);
 
-		
-		
-		int[] unSortedArray = {8, 5, 7, 3, 1, 6, 0, 4, 2, 9};
-		int[] sortedArray = mergeSort(unSortedArray); 
-
-		for (int i=0; i<sortedArray.length; i++)
-			System.out.print(sortedArray[i] + " ");
-		
+		for (int i=0; i<myArray.length; i++)
+			System.out.print(myArray[i] + " ");
 	}
 	
 	
