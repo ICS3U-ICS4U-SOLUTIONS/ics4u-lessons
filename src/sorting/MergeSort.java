@@ -6,7 +6,7 @@ public class MergeSort {
 	
 	public static void main(String[] args) {
 
-		int[] myArray = { 20, 47, 15, 8, 9, 4, 40, 30, 12, 17 };
+		int[] myArray = { 20, 47, 15, 8, 9, 4, 40, -3, 30, 0, 9, 8, 12, 17 };
 
 		myArray = mergeSort(myArray);
 
