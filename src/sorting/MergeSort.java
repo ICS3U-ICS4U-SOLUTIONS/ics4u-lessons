@@ -28,6 +28,9 @@ public class MergeSort {
 		// create arrayOne, populate with left half of a[]
 		int[] arrayOne = new int[a.length/2];
 		
+	// 	NEW:	
+	//	int[] arrayTwo = new int[a.length - a.length/2];
+		
 		for (int i=0; i<a.length/2; i++)
 			arrayOne[i] = a[i];
 		
