@@ -1,6 +1,6 @@
 package sorting;
 
-public class MergeSort {
+public class MergeSortOld {
 
 	public static int counter = 0;
 	
@@ -25,24 +25,39 @@ public class MergeSort {
 		if (a.length == 1)
 			return a;
 		
-		// create two arrays
+		// create arrayOne, populate with left half of a[]
 		int[] arrayOne = new int[a.length/2];
-		int[] arrayTwo = new int[a.length - a.length/2];
 		
-		// populate arrayOne[] with left half of a[]
+	// 	NEW:	
+	//	int[] arrayTwo = new int[a.length - a.length/2];
+		
 		for (int i=0; i<a.length/2; i++)
 			arrayOne[i] = a[i];
 		
-		// populate arrayTwo[] with left half of a[]
+		// create arrayTwo, populate with right half of a[]
+		int[] arrayTwo = null;
+		
+		if (a.length%2 == 0)  // if a.length even
+			arrayTwo = new int[a.length/2];
+		
+		else  // if a.length odd
+			arrayTwo = new int[a.length/2 + 1];
+
 		int j = 0;
-	
+		
 		for (int i=a.length/2; i<a.length; i++)  {
 			arrayTwo[j] = a[i];
 			j++;
 		}
+		
+		// sort arrayOne
+		arrayOne = mergeSort(arrayOne);
+
+		// sort arrayTwo
+		arrayTwo = mergeSort(arrayTwo);
 
 		// merge arrayOne with arrayTwo
-		return merge(mergeSort(arrayOne), mergeSort(arrayTwo));
+		return merge(arrayOne, arrayTwo);
 	}
 		
 	
