@@ -11,13 +11,14 @@ import java.awt.event.ActionEvent;
 
 public class RadioButtons {
 
-	// variables
+	// global variables
 	private JFrame frame;
 	private JTextField textField;
-	JRadioButton male = new JRadioButton("Male");
-	JRadioButton female = new JRadioButton("Female");
-	JRadioButton other = new JRadioButton("Other");
+	JRadioButton fooRadio = new JRadioButton("foo");
+	JRadioButton barRadio = new JRadioButton("bar");
+	JRadioButton fubarRadio = new JRadioButton("fubar");
 	
+
 	/**
 	 * Launch the application.
 	 */
@@ -51,62 +52,80 @@ public class RadioButtons {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(259, 112, 86, 20);
+		textField.setBounds(118, 220, 215, 17);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Click Me!");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnClickMe = new JButton("Click Me");
+		btnClickMe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if(male.isSelected())
-					textField.setText("Male selected.");
+				if(fooRadio.isSelected())
+					textField.setText("foo selected");
 				
-				if(female.isSelected())
-					textField.setText("Female selected.");
+				if(barRadio.isSelected())
+					textField.setText("bar selected");
 				
-				if(other.isSelected())
-					textField.setText("Other selected.");
+				if(fubarRadio.isSelected())
+					textField.setText("fubar selected");
 			}
 		});
-		btnNewButton.setBounds(259, 176, 89, 23);
-		frame.getContentPane().add(btnNewButton);
-		
-		
-		male.addActionListener(new ActionListener() {
+		btnClickMe.setBounds(249, 163, 89, 23);
+		frame.getContentPane().add(btnClickMe);
+		fooRadio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				female.setSelected(false);
-				other.setSelected(false);
+				if (fooRadio.isSelected())  {
+					
+					barRadio.setSelected(false);
+					fubarRadio.setSelected(false);
+				}
+				
+				if (fooRadio.isSelected() == false)
+					fooRadio.setSelected(true);
 			}
 		});
-		male.setBounds(40, 76, 109, 23);
-		frame.getContentPane().add(male);
-		male.setSelected(true);		// turn male radio button on by default
+		fooRadio.setSelected(true);
 		
 		
-		female.addActionListener(new ActionListener() {
+		fooRadio.setBounds(41, 81, 109, 23);
+		frame.getContentPane().add(fooRadio);
+		barRadio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				male.setSelected(false);
-				other.setSelected(false);
-			}
-		});
-		
-		
-		female.setBounds(40, 111, 109, 23);
-		frame.getContentPane().add(female);
-		other.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+				if (barRadio.isSelected())  {
+					
+					fooRadio.setSelected(false);
+					fubarRadio.setSelected(false);
+				}
 				
-				male.setSelected(false);
-				female.setSelected(false);
-			}
-		});
-		
-		
-		other.setBounds(40, 147, 109, 23);
-		frame.getContentPane().add(other);
-	}
+				if (barRadio.isSelected() == false)
+					barRadio.setSelected(true);
 
+				
+			}
+		});
+
+		
+		
+		barRadio.setBounds(41, 121, 109, 23);
+		frame.getContentPane().add(barRadio);
+		fubarRadio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (fubarRadio.isSelected())  {
+					
+					fooRadio.setSelected(false);
+					barRadio.setSelected(false);
+				}
+				
+				if (fubarRadio.isSelected() == false)					
+					fubarRadio.setSelected(true);
+			}
+		});
+		
+		
+		fubarRadio.setBounds(41, 163, 109, 23);
+		frame.getContentPane().add(fubarRadio);
+	}
 }
