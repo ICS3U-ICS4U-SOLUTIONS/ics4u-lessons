@@ -81,7 +81,7 @@ public class RadioButtons {
 					fubarRadio.setSelected(false);
 				}
 				
-				if (fooRadio.isSelected() == false)
+				else
 					fooRadio.setSelected(true);
 			}
 		});
@@ -99,10 +99,8 @@ public class RadioButtons {
 					fubarRadio.setSelected(false);
 				}
 				
-				if (barRadio.isSelected() == false)
+				else
 					barRadio.setSelected(true);
-
-				
 			}
 		});
 
@@ -119,7 +117,7 @@ public class RadioButtons {
 					barRadio.setSelected(false);
 				}
 				
-				if (fubarRadio.isSelected() == false)					
+				else					
 					fubarRadio.setSelected(true);
 			}
 		});
