@@ -9,10 +9,15 @@ public class U2A1_1DArrays {
 		int choice = 0;
 		int[] myArray = new int[12];
 		
-		choice = displayMenuAndReturnChoice();
 		
-		System.out.println(choice);
+		while(choice !=5 )  {
+		
+			choice = displayMenuAndReturnChoice();
+		}
+	
+		System.out.println("Exiting program.");
 	}
+	
 	
 	
 	/*  PRACTICE ASSIGNMENT
@@ -24,7 +29,7 @@ public class U2A1_1DArrays {
 
  */
 	
-	
+
 	// DESCRIPTION - Displays main menu, returns user choice (1-5)
 	// PARAMETERS - NA
 	// RETURN TYPE - int
