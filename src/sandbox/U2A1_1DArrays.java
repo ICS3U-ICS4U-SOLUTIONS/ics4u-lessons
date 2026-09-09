@@ -13,6 +13,10 @@ public class U2A1_1DArrays {
 		while(choice !=5 )  {
 		
 			choice = displayMenuAndReturnChoice();
+			
+			if (choice == 1)
+				enterTwelveIntegers(myArray);
+			
 		}
 	
 		System.out.println("Exiting program.");
@@ -68,6 +72,15 @@ public class U2A1_1DArrays {
 	// PARAMETERS - int[] a
 	// RETURN TYPE - void
 	public static void enterTwelveIntegers(int[] a)  {
+		
+		// variables
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i=0; i<a.length; i++)  {
+			
+			
+		}
+
 		
 
 	}
