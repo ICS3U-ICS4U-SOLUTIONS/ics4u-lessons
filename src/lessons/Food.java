@@ -1,16 +1,16 @@
 package lessons;
 
-public class Food {
+abstract class Food {
 
 	// data members
-	String colour;
-	String texture;
-	int calories;
+	protected String colour;
+	protected String texture;
+	protected int calories;
 	
 	// default constructor
 	public Food()  {
 		
-		this.colour = "";
+		this.colour = "asffds";
 		this.texture = "";
 		this.calories = 0;
 	}
@@ -54,9 +54,6 @@ public class Food {
 		
 		this.calories = c;
 	}
-	
-	
-	
 	
 	@Override
 	public String toString()  {
