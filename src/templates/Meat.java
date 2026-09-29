@@ -1,4 +1,4 @@
-package lessons;
+package templates;
 
 public class Meat extends Food {
 

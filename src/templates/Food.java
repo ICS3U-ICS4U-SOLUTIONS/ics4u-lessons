@@ -1,4 +1,4 @@
-package lessons;
+package templates;
 
 abstract class Food {
 
