@@ -1,4 +1,4 @@
-package sandbox;
+package javaReviewSolutions;
 
 public class RoundingToDecimal {
 
