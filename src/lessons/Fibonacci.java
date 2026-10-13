@@ -1,19 +1,43 @@
 package lessons;
 
-public class FibonacciReview {
+public class Fibonacci {
 
 	public static void main(String[] args) {
 
 		// 	0 	1 	1 	2 	3 	5 	8	 (fibonacci sequence)
 		//  1	2	3	4	5	6	7    (sequence numbers)
 		
-		int n = 7;
+		int n = 5;
 	//	System.out.println(fibonacciWhileLoop(n));
-		System.out.println(fibonacciForLoop(n));
-
-		
+	//	System.out.println(fibonacciForLoop(n));
+		System.out.println(fibonacciRecursive(n));
 	}
 
+	
+	// DESCRIPTION - Returns value of Fibonacci sequence number.
+	// PARAMETERS - int n
+	// RETURN - int
+	public static int fibonacciRecursive(int n)  {
+	
+		// variables
+		int first = 0;
+		int second = 1;
+		
+		// error case
+		if (n<1)
+			return -1;
+		
+		// base/stop case(s)
+		if (n == 1)
+			return first;
+		
+		// base/stop case(s)
+		if (n == 2)
+			return second;
+		
+		return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
+	}
+	
 	// DESCRIPTION - Returns value of Fibonacci sequence number.
 	// PARAMETERS - int n
 	// RETURN - int
