@@ -13,13 +13,16 @@ public class RecursivePracticeProblem {
 		if(x > y)  {
 			
 			System.out.println(-1);
+			return;
 		}
 			
 		// base/stop case(s)
 		if(x == y)  {
 			
 			System.out.println(x);
+			return;
 		}
+		
 		
 		System.out.print(x);  // "calculation"
 		countUp(x+1, y);  // recursive call
