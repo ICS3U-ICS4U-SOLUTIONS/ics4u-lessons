@@ -10,13 +10,14 @@ public class FileInput {
 		ArrayList<String> colours = new ArrayList();
 		BufferedReader br = null;
 		String word = "";
+		String folder = "src/colours.txt";
 		
 		// must use try/catch block to read files
 		try  {
 			
 			// place .txt file under src folder in Eclipse
 			// load file into memory
-			br = new BufferedReader(new FileReader("src/colours.txt")); 
+			br = new BufferedReader(new FileReader(folder)); 
 			
 			// read contents of text file from memory, line-by-line until EOF
 			// add each word to ArrayList
