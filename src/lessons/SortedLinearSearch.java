@@ -9,8 +9,10 @@ public class SortedLinearSearch {
 		String[] sortedArray = {"black", "blue", "green", "orange", "peach", "purple",
 				"red", "salmon", "white"};
 		
-		System.out.println(linearSortedSearch(sortedArray, "aprocot"));
+		System.out.println(linearSortedSearch(sortedArray, "blue"));
 		System.out.println("COUNTER: " + counter);
+		
+		System.out.println("blue".compareToIgnoreCase("green"));
 	}
 	
 	// DESCRIPTION - Returns index of p in a. Returns -1 if not in list. 
@@ -26,12 +28,12 @@ public class SortedLinearSearch {
 			if(p.compareToIgnoreCase(a[i]) == 0)
 				return i;
 
-			// past the point where "pattern" should be
-			// in sorted list, stop and return sentinel value
-			if(p.compareToIgnoreCase(a[i]) < 0)
-				break;		
+			// past point where "pattern" should be, stop loop
+			if(p.compareToIgnoreCase(a[i]) > 0)
+				break;	
 		}
 		
+		// pattern not found
 		return -1;
 	}
 
