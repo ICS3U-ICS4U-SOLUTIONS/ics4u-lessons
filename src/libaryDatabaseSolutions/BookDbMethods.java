@@ -75,46 +75,4 @@ public class BookDbMethods {
 	}
 	
 	
- 	// DESCRIPTION - Returns index of book if detected in database, -1 if not found.  Must indicate left and right 
-	//               indexes of array, method will search this range for reference number.  Array must be ordered.
-	// PARAMETERS - Book[] array, String pattern, int left, int right 
-	// RETURN TYPE - int
-	public static int binarySearch(Book[] array, String refNum, int left, int right)  {
-        
-		int refNumParam = 0;
-		int refNumBook = 0;
-    	int middle = (left + right)/2;
-		
-		try  {
-			refNumParam = Integer.parseInt(refNum);
-			refNumBook = Integer.parseInt(array[middle].getRefNum());
-		}	
-
-		catch (Exception e)  {
-			e.printStackTrace();
-		}
-
-   		// stop condition 1 - match found
-    	if (refNumParam == refNumBook)
-    		return middle;
-
-    	// stop condition 2 - searched entire list
-    	else if (left > right)
-    		return -1;      
-        
-    	// Match might be on left side
-    	else if (refNumParam < refNumBook)  {
-    		// New location for right side
-    		right = middle - 1;
-   			return(binarySearch(array, refNum, left, right));
-   		} 
-            
-   		// Match might be on right side
-    	else  {
-       		// New location for left side
-     		left = middle + 1;
-       		return(binarySearch(array, refNum, left, right));
-    	}
-	}
-	
 }
