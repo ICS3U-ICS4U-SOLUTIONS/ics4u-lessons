@@ -1,4 +1,4 @@
-package lessons;
+package sorting;
 
 public class SelectionSort {
 
@@ -44,6 +44,27 @@ public class SelectionSort {
 		selectionSortRecursive(a, i+1);
 	}
 
+	
+	// DESCRIPTION - Sorts array of integers in ascending order.
+	// PARAMETERS - int[] a
+	// RETURN TYPE - void
+	public static void betterSelectionSort(int[] a)  {
+		
+		for(int i=0; i<a.length-1; i++)  {
+			
+			int smallestItem = i;
+			
+			for(int j=i+1; j<a.length; j++)  {
+				
+				if(a[smallestItem] > a[j])
+					smallestItem = j;
+			}
+			
+			if (i != smallestItem)
+				swap(a, i, smallestItem);
+		}
+	}
+	
 	
 	// DESCRIPTION - Swaps elements in array at index x with index y.
 	// PARAMETERS - int[] a, int x, int y

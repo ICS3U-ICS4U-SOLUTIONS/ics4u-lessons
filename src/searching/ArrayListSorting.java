@@ -1,4 +1,4 @@
-package lessons;
+package searching;
 import java.util.ArrayList;
 import java.util.Comparator;	// for sorting ArrayLists
 
